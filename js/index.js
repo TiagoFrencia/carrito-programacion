@@ -191,7 +191,7 @@ var contador = 0;
 if(promo == "DESCUENTO" && contador == 0){
     descuento = total * 0.2;
     document.querySelector('#descuento').innerHTML = `$<del>${total}</del>`;
-    document.querySelector('#total').innerHTML = `$${total - descuento}`;
+    document.querySelector('#total').innerHTML = `TOTAL: $${total - descuento}`;
     contador = 1;
     let totalConDescuento = total - descuento;
     console.log(descuento);

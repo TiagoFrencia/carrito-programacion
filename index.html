@@ -18,7 +18,7 @@
                 <img src="img/logo.jpg" id="logo">
             </div>
             
-            <div class="two columns u-pull-right">
+            <div class="two columns u-pull-right" onmouseover="mostrarTotalPagar()" >
                 <ul>
                     <li class="submenu">
                             <img src="img/cart.png" id="img-carrito">
@@ -36,11 +36,15 @@
                                         </thead>
                                         <tbody></tbody>
                                     </table>
-
+                                    <div><p id="total"></p> </p></div>
+                                    <p id="descuento"></p>
+                                    <input type="text" class="input-group-text" id="input-promo" placeholder="Ingrese su Cupon de Descuento">
+                                    <button class="btn btn-promo" onclick="mostrarTotalPagar()">Aplicar</button>
                                     <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
                             </div>
                     </li>
                 </ul>
+                
             </div>
         </div> 
     </div>
@@ -53,12 +57,6 @@
             <div class="row banner-15">
                     <div class="six columns">
                         <div class="contenido-hero">
-
-                            <div id="liveAlertPlaceholder"></div>
-                            <button class="btn btn-promo" id="liveAlertBtn" >Pomocion</button>
-
-
-
                                 <h2>Aprende algo nuevo</h2>
                                 <p>Todos los cursos a $15</p>
                                 <form action="#" id="busqueda" method="post" class="formulario">
@@ -94,7 +92,9 @@
     <div id="lista-cursos" class="container">
         <h1 id="encabezado" class="encabezado">Cursos En Línea</h1>
         <div class="row">
-            <div class="four columns">
+            <div class="four columns" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Crear un íncreible Portafolio con muchos proyectos que te ayudarán a obtener un empleo <br><br>
+            Aprender y Dominar HTML y CSS para crear diseños modernos siguiendo buenas prácticas<br><br>
+            Aprender Metodologias HTML y CSS como Módulos y BEM" title="HTML5, CSS3, JavaScript para Principiantes" data-bs-html ="true">
                 <div class="card">
                     <img src="img/curso1.jpg" class="imagen-curso u-full-width">
                     <div class="info-card">
@@ -106,9 +106,11 @@
                     </div>
                 </div> <!--.card-->
             </div>
-            <div class="four columns">
+            <div class="four columns" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Haz recetas fáciles para tus comidas diarias.<br><br>
+            Haz diferentes desayunos, almuerzos y meriendas. <br><br>
+            Reemplaza huevos o productos lácteos en recetas con substitutos veganos." title="Curso de Comida Vegetariana" data-bs-html ="true">
                     <div class="card">
-                        <img src="img/curso2.jpg" class="imagen-curso u-full-width">
+                        <img src="img/curso2.jpg" class="imagen-curso u-full-width" >
                         <div class="info-card">
                             <h4>Curso de Comida Vegetariana</h4>
                             <p>Juan Pedro</p>
@@ -118,7 +120,9 @@
                         </div>
                     </div>
             </div>
-            <div class="four columns">
+            <div class="four columns" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Podrás tocar tus canciones favoritas <br><br>
+            Aprenderás los acordes básicos <br><br>
+            Aprenderás los acordes menores, mayores, séptima y menores séptima" title="Guitarra para Principiantes" data-bs-html ="true">
                     <div class="card">
                         <img src="img/curso3.jpg" class="imagen-curso u-full-width">
                         <div class="info-card">
@@ -133,7 +137,9 @@
 
         </div> <!--.row-->
         <div class="row">
-            <div class="four columns">
+            <div class="four columns" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Agricultura Orgánica desde casa <br><br>
+            Permacultura: Agricultura permanente desde tu hogar <br><br>
+            Montar un huerto en casa" title="Huerto en tu casa" data-bs-html ="true">
                 <div class="card">
                     <img src="img/curso4.jpg" class="imagen-curso u-full-width">
                     <div class="info-card">
@@ -273,8 +279,19 @@
 
     <!--script src="js/app.js"></scrit-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
     <script src="/js/index.js"></script>
-    
+    <script>
+        const exampleEl = document.getElementById('example')
+        const popover = new bootstrap.Popover(exampleEl, options)
+        // getOrCreateInstance example
+    const poper = bootstrap.Popover.getOrCreateInstance('#example') // Returns a Bootstrap popover instance
+
+    // setContent example
+    myPopover.setContent({
+    '.popover-header': 'tituloooo',
+    '.popover-body': 'another content'
+        })
+    </script>
 </body>
 </html>
